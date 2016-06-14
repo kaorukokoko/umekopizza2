@@ -25,7 +25,8 @@ public class LoginServlet extends HttpServlet {
 	          + "!  You can <a href=\""
 	          + userService.createLogoutURL(thisUrl)
 	          + "\">sign out</a>.</p>");*/
-	    	resp.sendRedirect("/index.html");
+	    	//;
+	    	resp.sendRedirect("/index.html");LinkData user = new LinkData(req.getUserPrincipal().getName());
 	    } else {
 	      resp.getWriter().println("<p>Please <a href=\""
 	            + userService.createLoginURL(thisUrl)

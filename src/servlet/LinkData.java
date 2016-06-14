@@ -1,6 +1,7 @@
 package servlet;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.Date;
  
 import javax.jdo.annotations.*;
@@ -24,14 +25,38 @@ public class LinkData {
     @Persistent
     //@PrimaryKey
     private Date datetime;
+    
+    private String date;
+    
+    private String userid;
+    
+    public LinkData(){
+    	
+    }
  
-    public LinkData(String title, String url, String comment, Date datetime) {
+    public LinkData(String title, String url, String comment, String datetime) {
         super();
         this.title = title;
         this.url = url;
         this.comment = comment;
-        this.datetime = datetime;
+        //this.datetime = datetime;
+        this.date = datetime;
     }
+    
+    public LinkData(String title, String url, String comment, String datetime,String userid) {
+        super();
+        this.title = title;
+        this.url = url;
+        this.comment = comment;
+        //this.datetime = datetime;
+        this.date = datetime;
+        this.userid = userid;
+    }
+    
+    public LinkData(String userid){
+		super();
+		this.userid = userid;
+	}
  
     public Long getId() {
         return id;
@@ -65,11 +90,22 @@ public class LinkData {
         this.comment = comment;
     }
  
-    public Date getDatetime() {
-        return datetime;
+    public String getDatetime() {
+        return date;
     }
  
-    public void setDatetime(Date datetime) {
-        this.datetime = datetime;
+    public void setDatetime(String datetime) {
+        //this.datetime = datetime;
+        //String str = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(this.datetime);
+        //date = str;
+    	this.date = datetime;
     }
+    
+    public String getUserid(){
+		return userid;
+	}
+	
+	public void setUserid(String userid){
+		this.userid = userid;
+	}
 }

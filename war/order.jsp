@@ -71,12 +71,54 @@
                     </pre></td></tr>
             </table>
             <table>
-                <tr><td>マルゲリータ:</td><td><input type="text" name="pizza1">枚×1500円</td></tr>
-                <tr><td>照り焼きチキン:</td><td><input type="text" name="pizza2">枚×2300円</td></tr>
-                <tr><td>シーフード:</td><td><input type="text" name="pizza3">枚×2700円</td></tr>
-                <tr><td>チーズスペシャル:</td><td><input type="text" name="pizza4">枚×3000円</td></tr>
-                <tr><td>ウメコデラックス:</td><td><input type="text" name="pizza5">枚×3500円</td></tr>
-                <tr><td>うめこおばさんの気まぐれピザ:</td><td><input type="text" name="pizza6">枚×3200円</td></tr>
+                <tr><td>マルゲリータ:</td><td><select name="pizza1">
+                <option value ="0">0</option>
+                <option value ="1">1</option>
+                <option value ="2">2</option>
+                <option value ="3">3</option>
+                <option value ="4">4</option>
+                <option value ="5">5</option>
+                </select>枚×1500円</td></tr>
+                <tr><td>照り焼きチキン:</td><td><select name="pizza2">
+                <option value ="0">0</option>
+                <option value ="1">1</option>
+                <option value ="2">2</option>
+                <option value ="3">3</option>
+                <option value ="4">4</option>
+                <option value ="5">5</option>
+                </select>枚×2300円</td></tr>
+                <tr><td>シーフード:</td><td><select name="pizza3">
+                <option value ="0">0</option>
+                <option value ="1">1</option>
+                <option value ="2">2</option>
+                <option value ="3">3</option>
+                <option value ="4">4</option>
+                <option value ="5">5</option>
+                </select>枚×2700円</td></tr>
+                <tr><td>チーズスペシャル:</td><td><select name="pizza4">
+                <option value ="0">0</option>
+                <option value ="1">1</option>
+                <option value ="2">2</option>
+                <option value ="3">3</option>
+                <option value ="4">4</option>
+                <option value ="5">5</option>
+                </select>枚×3000円</td></tr>
+                <tr><td>ウメコデラックス:</td><td><select name="pizza5">
+                <option value ="0">0</option>
+                <option value ="1">1</option>
+                <option value ="2">2</option>
+                <option value ="3">3</option>
+                <option value ="4">4</option>
+                <option value ="5">5</option>
+                </select>枚×3500円</td></tr>
+                <tr><td>うめこおばさんの気まぐれピザ:</td><td><select name="pizza6">
+                <option value ="0">0</option>
+                <option value ="1">1</option>
+                <option value ="2">2</option>
+                <option value ="3">3</option>
+                <option value ="4">4</option>
+                <option value ="5">5</option>
+                </select>枚×3200円</td></tr>
             </table>
 
 

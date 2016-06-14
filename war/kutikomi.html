@@ -1,6 +1,8 @@
 
    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
      "http://www.w3.org/TR/html4/loose.dtd">
+     
+    
     
      
      <html>
@@ -14,10 +16,13 @@
             var json = eval(request.responseText);
             var res = '';
             if (json.length == 1){
-                res += '<tr><td>' + json[0].id +'</td></tr>';
-                res += '<tr><td>' + json[0].title +'</td></tr>';
-                res += '<tr><td>' + json[0].url +'</td></tr>';
-                //res += '<tr><td>' + json[0].comment +'</td></tr>';
+                //res += '<tr><td>' + json[0].id +'</td>';
+                res += '<tr><td>' + json[0].date +'</td>';
+                res += '<td>' + json[0].title +'</td>';
+                //res += '<tr><td>' + json[0].url +'</td></tr>';
+                res += '<td>' + json[0].comment +'</td>';
+                res += '<td><a href="edit.html?id=' + json[0].id + '">Edit</td>' ;
+                res += '<td><a href="del.html?id=' + json[0].id + '">Delete</td></tr>';     
             } else {
                 for (var i = 0;i < json.length;i++){
                     //res += '<tr><td><a href="javascript:return false;" onclick="getData(' + json[i].id +');">' + json[i].id + '</a></td>';
@@ -28,11 +33,17 @@
                     //res += '<tr><td>'+json[i].title +'</td>' +  '<td>'+json[i].comment +'</td></tr>';
                     
 		 			//res += '<tr><td>' +json[i].title +'</td>' +  '<td>'+json[i].comment +'</td></tr>';
-                            
-                	res += '<tr><td>'+json[i].datetime + '</td>'+ '<td>' +json[i].title +'</td>' +  '<td>'+json[i].comment +'</td>';
+                    /* var before = json[i].datetime;
+                     var after = before.replace(/-/g, '/');   
+                     res += '<tr><td>'+after.toString() + '</td>'+ '<td>' +json[i].title +'</td>' +  '<td>'+json[i].comment +'</td>';  */  
+                     
+                	res += '<tr><td>'+json[i].date + '</td>'+ '<td>' +json[i].title +'</td>' +  '<td>'+json[i].comment +'</td>';
+                	//Linkdata link = new Linkdata();
+                	//if(link.getUserid() == json[i].userid){
                  	res += '<td><a href="edit.html?id=' + json[i].id + '">Edit</td>' ;
-                    res += '<td><a href="del.html?id=' + json[i].id + '">Delete</td></tr>';     
-                    
+                    res += '<td><a href="del.html?id=' + json[i].id + '">Delete</td>';   
+                  // }  
+                    res += '</tr>';
                 }
             }
             var obj = document.getElementById("datatable");
@@ -57,7 +68,7 @@
    
     <form action="/add" method="post">
         <p>ニックネーム:<input type="text" name="title"></p>
-        <p><textarea name="comment" cols="40" rows="10"></textarea></p>
+        <p>口コミ     :<input type="text" name="comment"></p>
         <input type="submit" value="投稿">
     </form>
 
